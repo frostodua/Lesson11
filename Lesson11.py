@@ -63,3 +63,6 @@ def words_more_6letters(First_task_Begin, First_task_End):
 input_filename = 'First_task_Begin.txt'
 output_filename = 'First_task_End.txt'
 words_more_6letters(input_filename, output_filename)
+
+# 2. Даний текстовий файл. Підрахувати кількість слів у ньому.
+
