@@ -66,3 +66,11 @@ words_more_6letters(input_filename, output_filename)
 
 # 2. Даний текстовий файл. Підрахувати кількість слів у ньому.
 
+def count_words(First_task_Begin):
+    with open(First_task_Begin, 'r') as file:
+        words = file.read().split()
+    return len(words)
+
+input_filename = 'First_task_Begin.txt'
+word_count = count_words(input_filename)
+print(f"Кількість слів у файлі: {word_count}")
