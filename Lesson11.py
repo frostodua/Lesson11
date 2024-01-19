@@ -81,3 +81,28 @@ print(f"Кількість слів у файлі: {word_count}")
 #
 # За підсумками роботи програми необхідно показати статистику дій.#
 
+import re
+
+def censor_words(input_file, output_file, forbidden_word):
+    with open(input_file, 'r') as file:
+        text = file.read()
+    count = 0
+    for word in forbidden_word:
+        count += len(re.findall(rf'\b{re.escape(word)}\b', text))
+        text = re.sub(rf'\b{re.escape(word)}\b', '*' * len(word), text)
+
+    for word in forbidden_word:
+        text = text.replace(word, '*' * len(word))
+
+    with open(output_file, 'w') as file:
+        file.write(text)
+    return count
+
+input_filename = 'First_task_Begin.txt'
+output_censored_filename = 'Three_task_End.txt'
+forbidden_word = ['be']
+censor_words(input_filename, output_filename, forbidden_word)
+count = censor_words(input_filename, output_censored_filename, forbidden_word)
+print(f'Неприпустимих слів замінено: {count}')
+
+
