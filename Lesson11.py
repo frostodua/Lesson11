@@ -51,7 +51,7 @@ try:
 except Exception as e:
     print(e)
 
-def words_more_7letters(First_task_Begin, First_task_End):
+def words_more_6letters(First_task_Begin, First_task_End):
     with open(First_task_Begin, 'r') as file:
         words = file.read().split()
 
@@ -62,4 +62,4 @@ def words_more_7letters(First_task_Begin, First_task_End):
 
 input_filename = 'First_task_Begin.txt'
 output_filename = 'First_task_End.txt'
-words_more_7letters(input_filename, output_filename)
+words_more_6letters(input_filename, output_filename)
