@@ -33,3 +33,33 @@
 # 1. Даний текстовий файл. Необхідно створити новий файл, який потрібно
 # переписати з першого файлу всі слова, що складаються не менше ніж з семи літер.
 
+text = ['''To be, or not to be, that is the question, Whether 'tis nobler in the 
+mind to suffer The slings and arrows of outrageous fortune, Or to take arms against 
+a sea of troubles, And by opposing end them? To die: to sleep; No more; and by a 
+sleep to say we end The heart-ache and the thousand natural shocks That flesh is heir to,
+'tis a consummation Devoutly to be wish'd. To die, to sleep''']
+text = str(text)
+
+try:
+    my_file = open("First_task_Begin.txt", "w")
+    try:
+        my_file.write(text)
+    except Exception as e:
+        print(e)
+    finally:
+        my_file.close()
+except Exception as e:
+    print(e)
+
+def words_more_7letters(First_task_Begin, First_task_End):
+    with open(First_task_Begin, 'r') as file:
+        words = file.read().split()
+
+    long_words = [word for word in words if len(word) >= 7]
+
+    with open(First_task_End, 'w') as file:
+        file.write(' '.join(long_words))
+
+input_filename = 'First_task_Begin.txt'
+output_filename = 'First_task_End.txt'
+words_more_7letters(input_filename, output_filename)
